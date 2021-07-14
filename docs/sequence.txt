@@ -1,0 +1,53 @@
+//https://sequencediagram.org
+
+title WADWiSe20
+
+actor User
+
+participantgroup #lightgreen **React Frontend**
+participant App
+participant Loginpage
+participant Loginform
+participant Homepage
+participant Contactform
+end
+
+participantgroup #lightblue **Express Backend**
+participant Contacts-Endpoint
+participant Users-Endpoint
+end
+
+participant Nominatim
+
+//Loginpage
+App->Loginpage:Show Loginpage
+activate Loginpage
+User->Loginform:Input login data
+Loginform->Loginpage:Checks login data
+Loginpage->(1)Users-Endpoint:Validates User
+Loginpage(1)<--Users-Endpoint:Returns userId and role
+App(1)<-Loginpage:Sets Session-userId and -role
+deactivate Loginpage
+App->Homepage:Show Homepage
+
+
+//Homepage
+activate Homepage
+Homepage->(1)Contacts-Endpoint:Get Contacts
+Contacts-Endpoint-->(1)Homepage:Returns Contacts
+Homepage->(1)Users-Endpoint:Get Users
+Users-Endpoint-->(1)Homepage:Returns Users
+User->Homepage:Click "neuer kontakt"
+Homepage->Contactform:Show Contactform
+activate Contactform
+User->Contactform:Input contact data
+Contactform->Homepage:Check contact Data
+activate Homepage
+Homepage->(1)Nominatim:Check if address is correct
+Homepage(1)<--Nominatim:Return Coordinates
+Homepage->(1)Contacts-Endpoint:Create Contact
+deactivate Homepage
+deactivate Contactform
+Homepage->(1)Contacts-Endpoint:Get Contacts
+Contacts-Endpoint-->(1)Homepage:Returns Contacts
+

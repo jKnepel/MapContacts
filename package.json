@@ -1,38 +1,27 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "mapcontacts",
+	"version": "1.0.0",
+	"homepage": "https://mapcontacts.herokuapp.com/",
+	"scripts": {
+		"start": "cross-env NODE_ENV=production node server/server.js",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+		"dev": "cross-env NODE_ENV=development concurrently \"npm run server\" \"npm run client\"",
+		"server": "nodemon server/server.js --watch server/*",
+		"client": "npm start --prefix client"
+	},
+	"dependencies": {
+		"express": "^4.17.1",
+		"compression": "^1.7.4",
+		"cookie-parser": "^1.4.5",
+		"cors": "^2.8.5",
+		"cross-env": "^7.0.3",
+		"dotenv": "^10.0.0"
+	},
+	"devDependencies": {
+		"concurrently": "^6.0.0",
+		"nodemon": "^2.0.7"
+	},
+	"engines": {
+		"node": "14.16.0"
+	}
 }

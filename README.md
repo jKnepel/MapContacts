@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# WADWiSe20 - Julian Knepel
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
+Die Anwendung kann mit `npm install` installiert und mit `npm start` gestartet werden.
 
-## Available Scripts
+Die Standard User sind nutzername : admina, passwort : pass1234 und nutzername : normalo, passwort : pass1234.
 
-In the project directory, you can run:
+Die Bestandteile des MERN Stacks haben die Ports MongoDB: 27017, Express: 3001, React: 3000.
+Die MongoDB (Datenbank) liegt auf [Clever-Cloud](https://console.clever-cloud.com/?), kann aber zu localhost geändert werden.
+Falls nötig können die URLs und Ports in den folgenden Dateien angepasst werden:
 
-### `npm start`
+MongoDB
+> server/routes/database.js
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Express
+> server/server.js
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+React
+> src/utils/Api.js
 
-### `npm test`
+## Aufbau
+Grobe Skizze der für die Anwendung erstellten Komponenten und deren hierarschiche Anordnung. <br/>
+<img src="docs/components.png" width="60%">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Sequenzdiagramm, welches die Abläufe der Anwendung darstellt, wenn der User sich einloggt und einen neuen Kontakt erstellt. <br/>
+<img src="docs/sequence.png" width="80%">
 
-### `npm run build`
+## API-Endpoints
+Das Express-Backend stellt die Endpoints "Users" und "Contacts" inklusive CRUD-Funktionalitäten bereit.
+Die Endpoints können unter `localhost:3001/contacts`und `localhost:3001/users` erreicht werden.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Verwendete Technologien und Links
+* MERN Stack
+* [Leaflet](https://leafletjs.com/) / [Openstreetmap](https://www.openstreetmap.org/) API
+* [React-Color](https://www.npmjs.com/package/react-color)
+* [Axios](https://www.npmjs.com/package/axios)
+* [Prop-types](https://www.npmjs.com/package/prop-types)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ordnerstruktur von : https://blog.alexdevero.com/build-react-app-express-api/
