@@ -45,7 +45,7 @@ app.use((err, req, res, next) => {
 // Start express app
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-    console.log('server is up and listening on port ${PORT}');
+    console.log('server is up and listening on port ' + PORT);
 });
 
 module.exports = app;
