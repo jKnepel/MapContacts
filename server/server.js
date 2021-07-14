@@ -9,8 +9,8 @@ const cookieParser = require('cookie-parser');
 require("dotenv").config()
 
 // Import routes
-// const usersRoutes = require('./routes/users');
-// const contactsRoutes = require('./routes/contacts');
+const usersRoutes = require('./routes/users');
+const contactsRoutes = require('./routes/contacts');
 
 // Create express app
 const app = express();
@@ -23,8 +23,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Set app route values
-// app.use('/users', usersRoutes);
-// app.use('/contacts', contactsRoutes);
+app.use('/users', usersRoutes);
+app.use('/contacts', contactsRoutes);
 
 // Serve frontend from express
 if(process.env.NODE_ENV === 'production') {
