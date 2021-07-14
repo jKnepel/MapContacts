@@ -2,6 +2,7 @@
 	"name": "mapcontacts",
 	"version": "1.0.0",
 	"homepage": "https://mapcontacts.herokuapp.com/",
+	"main": "server/server.js",
 	"scripts": {
 		"start": "cross-env NODE_ENV=production node server/server.js",
 		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
